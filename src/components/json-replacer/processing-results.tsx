@@ -16,6 +16,7 @@ export function ProcessingResults({
   onDownload,
   onReset
 }: ProcessingResultsProps) {
+  const [copySuccess, setCopySuccess] = useState(false);
 
   const formatTime = (ms: number) => {
     if (ms < 1000) return `${ms}ms`;
@@ -40,6 +41,8 @@ export function ProcessingResults({
   const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(JSON.stringify(result.data, null, 2));
+      setCopySuccess(true);
+      setTimeout(() => setCopySuccess(false), 2000);
     } catch (err) {
       console.error('Failed to copy to clipboard:', err);
     }
@@ -174,10 +177,21 @@ export function ProcessingResults({
               onClick={copyToClipboard}
               className="flex items-center gap-2 px-3 py-1 text-sm bg-secondary hover:bg-border text-foreground-muted hover:text-foreground rounded-lg transition-all duration-200"
             >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-              </svg>
-              Copy
+              {copySuccess ? (
+                <>
+                  <svg className="w-4 h-4 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Copied!
+                </>
+              ) : (
+                <>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                  Copy
+                </>
+              )}
             </button>
           </div>
         </div>
