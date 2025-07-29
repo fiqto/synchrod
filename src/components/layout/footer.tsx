@@ -50,7 +50,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/fiqto/synchrod"
                   className="text-foreground-muted hover:text-primary transition-colors text-sm"
                   target="_blank"
                   rel="noopener noreferrer"
