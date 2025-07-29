@@ -39,3 +39,18 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE
+.vscode/
+.idea/
+
+# temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# screenshots and test files
+Screenshot*.png
+test
+*.test.*

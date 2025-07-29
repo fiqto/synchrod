@@ -1,12 +1,32 @@
 {
   "name": "synchrod",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "A modern JSON processing web application with merge and replacement tools",
+  "author": "Your Name",
+  "license": "MIT",
+  "homepage": "https://synchrod.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/synchrod.git"
+  },
+  "keywords": [
+    "json",
+    "merge",
+    "transform",
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "web-app"
+  ],
+  "private": false,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "export": "next build && next export"
   },
   "dependencies": {
     "react": "19.1.0",
