@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import { ReactNode } from 'react';
 
 interface FeatureCardProps {
-  /** Icon emoji or React component to display */
-  icon: string;
+  /** Icon emoji, SVG component, or React node to display */
+  icon: string | ReactNode;
   /** Title of the feature */
   title: string;
   /** Description text explaining the feature */
@@ -28,9 +29,13 @@ export function FeatureCard({
       <div className="relative">
         <div className="flex items-start justify-between mb-6">
           <div className="w-12 h-12 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-            <span className="text-2xl" role="img" aria-label={title}>
-              {icon}
-            </span>
+            {typeof icon === 'string' ? (
+              <span className="text-2xl" role="img" aria-label={title}>
+                {icon}
+              </span>
+            ) : (
+              icon
+            )}
           </div>
           {comingSoon && (
             <span className="bg-gradient-to-r from-accent/20 to-primary/20 text-accent border border-accent/30 text-xs px-3 py-1 rounded-full font-medium">
