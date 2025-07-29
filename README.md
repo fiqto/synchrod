@@ -37,7 +37,7 @@ A modern JSON processing web application built with Next.js 15 that provides pow
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/synchrod.git
+   git clone https://github.com/fiqto/synchrod.git
    cd synchrod
    ```
 
@@ -116,7 +116,7 @@ npm run lint         # Run ESLint
 ## 🌐 Deployment
 
 ### Deploy to Vercel
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/synchrod)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/fiqto/synchrod)
 
 ### Manual Deployment
 ```bash
@@ -146,7 +146,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙋‍♂️ Support
 
 If you have any questions or run into issues, please:
-- Check the [Issues](https://github.com/yourusername/synchrod/issues) section
+- Check the [Issues](https://github.com/fiqto/synchrod/issues) section
 - Create a new issue with detailed information
 - Join the discussion in existing issues
 
